@@ -18,3 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// LDAP Login Routes
+Route::get('login', 'Auth\LdapAuthController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LdapAuthController@login')->name('login.submit');
+
