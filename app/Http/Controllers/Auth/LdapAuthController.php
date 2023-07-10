@@ -7,11 +7,11 @@ use Illuminate\Http\Request;
 
 class LdapAuthController extends Controller
 {
-    //
+    public function __construct()
+    {
+        $this->middleware('auth:ldap');
+    }
 }
 
-public function __construct()
-{
-    $this->middleware('auth:ldap');
-}
+
 
