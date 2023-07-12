@@ -23,3 +23,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Route::get('login', 'Auth\LdapAuthController@showLoginForm')->name('login');
 // Route::post('login', 'Auth\LdapAuthController@login')->name('login.submit');
 
+Route::get('/login', 'Auth\LoginController@login')->name('login');
+Route::get('/auth/azure/callback', 'Auth\LoginController@handleAzureCallback');
