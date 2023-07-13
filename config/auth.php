@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        //'guard' => 'ldap',
+        'guard' => 'ldap',
         'guard' => 'web',
         'passwords' => 'users',
     ],
