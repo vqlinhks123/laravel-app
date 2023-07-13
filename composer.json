@@ -12,7 +12,8 @@
         "jotaelesalinas/laravel-adminless-ldap-auth": "^0.6.3",
         "laravel/framework": "9.0.0",
         "laravel/tinker": "~2.0",
-        "laravel/ui": "^3.4"
+        "laravel/ui": "^3.4",
+        "socialiteproviders/azure": "1.0.0"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

@@ -63,6 +63,14 @@ return [
             'bucket' => env('AWS_BUCKET'),
         ],
 
+        'azure' => [
+            'driver' => 'azure',
+            'account_name' => env('AZURE_STORAGE_ACCOUNT_NAME'),
+            'account_key' => env('AZURE_STORAGE_ACCOUNT_KEY'),
+            'container' => env('AZURE_STORAGE_CONTAINER'),
+            'url' => env('AZURE_STORAGE_URL'),
+            'prefix' => env('AZURE_STORAGE_PREFIX'),
+        ],        
     ],
 
 ];
