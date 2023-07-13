@@ -72,7 +72,6 @@
                         <a href="{{ url('/home') }}" style="color: white;">Home</a>
                     @else
                         <a href="{{ route('login') }}" style="color: white;">Login</a>
-                        <a href="{{ route('login.azure') }}" style="color: white;">Đăng nhập bằng Azure AD</a>
                         <a href="{{ route('register') }}" style="color: white;">Register</a>
                     @endauth
                 </div>
