@@ -14,7 +14,6 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'ldap',
         'guard' => 'web',
         'passwords' => 'users',
     ],
@@ -46,11 +45,6 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
-
-        'ldap' => [
-            'driver' => 'ldap',
-            'provider' => 'ldap_users',
-        ],
     ],
 
     /*
@@ -74,20 +68,6 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
-        ],
-
-        'ldap_users' => [
-            'driver' => 'ldap',
-            'model' => App\User::class, // Replace with your User model
-            'server' => [
-                'host' => env('LDAP_HOST'),
-                'port' => env('LDAP_PORT', 389),
-                'base_dn' => env('LDAP_BASE_DN'),
-                'username' => env('LDAP_USERNAME'),
-                'password' => env('LDAP_PASSWORD'),
-            ],
-            'identifier_key' => 'sAMAccountName',
-            'search_filter' => '(&(objectClass=user)(sAMAccountName={username}))',
         ],
 
         'users' => [
