@@ -20,11 +20,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 // LDAP Login Routes
-// Route::get('login', 'Auth\LdapAuthController@showLoginForm')->name('login');
-// Route::post('login', 'Auth\LdapAuthController@login')->name('login.submit');
-
-// Route::get('/login', 'Auth\LoginController@login')->name('login');
-// Route::get('/auth/azure/callback', 'Auth\LoginController@handleAzureCallback');
-
-Route::get('/login/azure', 'Auth\LoginController@redirectToAzure')->name('login.azure');
-Route::get('/login/azure/callback', 'Auth\LoginController@handleAzureCallback');
+Route::get('login', 'Auth\LdapAuthController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LdapAuthController@login')->name('login.submit');

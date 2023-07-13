@@ -5,24 +5,21 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
-// use Illuminate\Http\Request;
-// use Microsoft\Graph\Graph;
-// use Microsoft\Graph\Model;
-// use Microsoft\Graph\Connect\Constants;
-// use Microsoft\Graph\Connect\Constants\IdTokenClaimTypes;
-// use Microsoft\Graph\Connect\Constants\OidcScopes;
-// use Microsoft\Graph\Connect\Constants\SessionClaimTypes;
+use Illuminate\Http\Request;
+use Microsoft\Graph\Graph;
+use Microsoft\Graph\Model;
+use Microsoft\Graph\Connect\Constants;
+use Microsoft\Graph\Connect\Constants\IdTokenClaimTypes;
+use Microsoft\Graph\Connect\Constants\OidcScopes;
+use Microsoft\Graph\Connect\Constants\SessionClaimTypes;
 use Microsoft\Graph\Connect\Constants\TokenTypeIdentifiers;
-// use Microsoft\Graph\Connect\ConnectWebApp\UserClaimsFactory;
+use Microsoft\Graph\Connect\ConnectWebApp\UserClaimsFactory;
 use Microsoft\Identity\Client\AccessToken;
-// use Microsoft\Identity\Client\AuthenticationResult;
-// use Microsoft\Identity\Client\PublicClientApplication;
+use Microsoft\Identity\Client\AuthenticationResult;
+use Microsoft\Identity\Client\PublicClientApplication;
 use Microsoft\Identity\Client\TokenCache;
 use Microsoft\Identity\Client\TokenCache\InMemoryTokenCache;
-// use Microsoft\Identity\Client\Exception\MSALException;
-
-use Illuminate\Http\Request;
-use Laravel\Socialite\Facades\Socialite;
+use Microsoft\Identity\Client\Exception\MSALException;
 
 class LoginController extends Controller
 {
@@ -56,26 +53,7 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function redirectToAzure()
-    {
-        return Socialite::driver('azure')->redirect();
-    }
-
-    public function handleAzureCallback()
-    {
-        $user = Socialite::driver('azure')->user();
-
-        // Xử lý thông tin người dùng đã đăng nhập thành công vào Laravel app của bạn
-
-        // Ví dụ: Lưu thông tin người dùng vào session và chuyển hướng tới trang chính
-        session(['user' => $user]);
-
-        return redirect()->route('home');
-    }
-    //
-    //
-    //
-
+    
     // protected $graph;
 
     // public function __construct()
