@@ -14,7 +14,8 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        // 'guard' => 'web',
+        'guard' => 'ldap',
         'passwords' => 'users',
     ],
 
@@ -36,6 +37,10 @@ return [
     */
 
     'guards' => [
+        'ldap' => [
+            'driver' => 'session',
+            'provider' => 'ldap',
+        ],
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
@@ -65,6 +70,14 @@ return [
     */
 
     'providers' => [
+        'ldap' => [
+            'driver' => 'ldap',
+            'model' => App\Models\User::class,
+            'rules' => [
+                \Adldap\Laravel\Validation\Rules\DenyTrashed::class,
+            ],
+            'connection' => 'azure_ad',
+        ],
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
@@ -99,4 +112,20 @@ return [
         ],
     ],
 
+    'azure_ad' => [
+        'auto_connect' => env('LDAP_AUTO_CONNECT', true),
+        'connection' => Adldap\Connections\Ldap::class,
+        'settings' => [
+            'schema' => Adldap\Schemas\OpenLDAP::class,
+            'account_prefix' => '',
+            'account_suffix' => '@vuquanglinh2122001gmail.onmicrosoft.com',
+            'hosts' => ['vuquanglinh2122001gmail.onmicrosoft.com'],
+            'port' => 636,
+            'timeout' => 5,
+            'base_dn' => 'dc=vuquanglinh2122001gmail,dc=onmicrosoft,dc=com',
+            'username' => '34f61fb9-2151-4dd9-87f4-b0506748cfbf',
+            'password' => '43174425-5ac7-45f2-9ab2-219c02824b16',
+            'follow_referrals' => false,
+        ],
+    ],    
 ];
