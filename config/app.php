@@ -176,7 +176,9 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        
+        //Adldap for Laravel
+        Adldap\Laravel\AdldapServiceProvider::class
     ],
 
     /*
