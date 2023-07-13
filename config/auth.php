@@ -47,10 +47,10 @@ return [
             'provider' => 'users',
         ],
 
-        // 'ldap' => [
-        //     'driver' => 'ldap',
-        //     'provider' => 'ldap_users',
-        // ],
+        'ldap' => [
+            'driver' => 'ldap',
+            'provider' => 'ldap_users',
+        ],
     ],
 
     /*
